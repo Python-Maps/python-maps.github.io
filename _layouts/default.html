@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-{% include head.html %}
-
-<body>
-
-   {% include header.html %}
-
-   <div class="content">
-      <div class="container">
-         {{ content }}
-      </div>
-   </div><!-- end .content -->
-
-   {% include footer.html %}
-   {% include scripts.html %}
-
-</body>
-
+<!doctype html>
+<html>
+  <head>
+    {% if site.data.metaData.cookies.enabled %}
+      <script>
+        {% include cookies.js %}
+      </script>
+    {% endif %}
+    {% include common-head.html %}
+  </head>
+  {% if site.data.menu.minimal_menu %}
+  <body class="is-minimal-menu" >
+  {% else %}
+  <body>
+  {% endif %}
+    {% include menu.html %}
+      <main class="content-layout">
+          {{ content }}
+          {% include footer.html %}
+      </main>
+  </body>
 </html>
