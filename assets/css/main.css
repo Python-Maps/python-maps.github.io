@@ -165,6 +165,10 @@ input, select, textarea {
 	body {
 		background: #242629;
 	}
+	.dark-mode {
+		background: black;
+		color: white;
+	  }
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
